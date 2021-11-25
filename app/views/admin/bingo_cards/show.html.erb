@@ -5,3 +5,18 @@
 <p>Start: <%= @bingo_card.start_date %></p>
 <p>End: <%= @bingo_card.end_date %></p>
 <p>Status: <%= @bingo_card.status.titleize %></p>
+
+<h3>Teams</h3>
+
+<%= link_to 'Add Team', new_admin_bingo_card_team_path(@bingo_card) %>
+
+<% @bingo_card.teams.each do |team| %>
+  <div>
+    <h4><%= team.name %></h4>
+    <ul>
+      <% team.team_users.each do |team_user| %>
+        <li><%= team_user.user.username %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

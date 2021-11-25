@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :user_id, 'Member' %>
+    <%= f.select :user_id, options_for_select(@bingo_card.available_users.map{|u| [u.username, u.id]}) %>
+  </div>
+  <%= link_to_remove_association "Remove Member", f %>
+</div>

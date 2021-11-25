@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :bingo_cards do
-      resources :teams
+      resources :teams, controller: 'bingo_cards/teams'
     end
   end
 end

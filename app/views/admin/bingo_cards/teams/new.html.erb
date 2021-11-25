@@ -1,0 +1,21 @@
+<%= form_for [:admin, @bingo_card, @team] do |f| %>
+  <h2><%= @bingo_card.name %> - New Team</h2>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <h3>Members</h3>
+
+  <div id="members">
+    <%= f.fields_for :team_users do |team_user| %>
+      <%= render 'team_user_fields', f: team_user %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Member', f, :team_users %>
+    </div>
+  </div>
+
+  <%= f.submit 'Create New Team' %>
+<% end %>
