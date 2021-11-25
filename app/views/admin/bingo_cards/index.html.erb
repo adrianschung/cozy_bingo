@@ -1,0 +1,8 @@
+<h1>Bingo Cards</h1>
+<%= link_to 'New Bingo Card', new_admin_bingo_card_path %>
+
+<ul>
+  <% @bingo_cards.each do |card| %>
+    <li><%= link_to card.name, admin_bingo_card_path(card) %></li>  
+  <% end %>
+</ul>

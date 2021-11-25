@@ -6,3 +6,9 @@
     <%= link_to 'Signup', signup_path %>
     <%= link_to 'Login', login_path %>
 <% end %>
+
+<% if current_user %>
+  <ul>
+    <li><%= link_to 'Bingo Cards', admin_bingo_cards_path %></li>
+  </ul>
+<% end %>
