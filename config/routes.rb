@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users
 
   namespace :admin do
-    resources :bingo_cards
+    resources :bingo_cards do
+      resources :teams
+    end
   end
 end
