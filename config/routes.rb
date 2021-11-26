@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :bingo_cards do
       resources :teams, controller: 'bingo_cards/teams'
     end
+    resources :tasks
   end
 end
