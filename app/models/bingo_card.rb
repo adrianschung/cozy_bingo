@@ -4,9 +4,6 @@ class BingoCard < ApplicationRecord
 
   def available_users
     team_ids = teams.map(&:id)
-    p team_ids
-    user_ids = User.joins(:teams).where(teams: {id: team_ids})
-    p user_ids
-    User.where.not(id: user_ids)
+    User.where.not(id: User.joins(:teams).where(teams: {id: team_ids}))
   end
 end
